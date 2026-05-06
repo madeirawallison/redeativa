@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rede Ativa Mulher – Mulheres que se apoiam, negócios que prosperam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --roxo:#6b2576;
+  --roxo-escuro:#4a1a52;
+  --roxo-claro:#e8d4ed;
+  --pink:#d539b4;
+  --pink-claro:#f7d6f3;
+  --rose:#c25c6b;
+  --branco:#ffffff;
+  --off:#fdf8ff;
+  --cinza:#f3eef7;
+  --texto:#1a0a1e;
+  --texto-suave:#5a3d63;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--off);color:var(--texto);overflow-x:hidden}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(253,248,255,0.93);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(107,37,118,0.1);
+  height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 4rem;
+}
+.nav-logo{display:flex;align-items:center;gap:.75rem}
+.nav-logo img{height:38px;width:auto}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.82rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--texto-suave);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--roxo)}
+.nav-cta{background:var(--roxo)!important;color:white!important;padding:.5rem 1.4rem;border-radius:2rem;text-transform:none!important;font-weight:600!important;transition:background .2s!important}
+.nav-cta:hover{background:var(--roxo-escuro)!important}
+
+.hero{min-height:100vh;padding-top:70px;display:grid;grid-template-columns:1fr 1fr;background:linear-gradient(150deg,var(--off) 0%,var(--cinza) 60%,#f0daf5 100%);position:relative;overflow:hidden}
+.hero-glow-1{position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(213,57,180,.12) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.hero-glow-2{position:absolute;bottom:-80px;left:0;width:350px;height:350px;background:radial-gradient(circle,rgba(107,37,118,.08) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:5rem 3rem 5rem 5rem;position:relative;z-index:1}
+.badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(107,37,118,.07);border:1px solid rgba(107,37,118,.18);border-radius:2rem;padding:.4rem 1rem;font-size:.72rem;font-weight:600;color:var(--roxo);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.75rem;width:fit-content}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,3.8vw,3.8rem);line-height:1.1;color:var(--texto);margin-bottom:.75rem}
+.hero-title em{font-style:italic;color:var(--pink)}
+.hero-slogan{font-size:.95rem;font-weight:500;color:var(--roxo);font-style:italic;margin-bottom:1.5rem}
+.hero-sub{font-size:.95rem;font-weight:300;line-height:1.8;color:var(--texto-suave);max-width:470px;margin-bottom:2.5rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn-p{background:var(--roxo);color:white;padding:.9rem 2rem;border-radius:2rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:600;text-decoration:none;transition:background .2s,transform .15s;border:none;cursor:pointer;display:inline-block}
+.btn-p:hover{background:var(--roxo-escuro);transform:translateY(-2px)}
+.btn-o{background:transparent;color:var(--roxo);padding:.88rem 2rem;border-radius:2rem;border:2px solid var(--roxo);font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .2s;display:inline-block}
+.btn-o:hover{background:rgba(107,37,118,.06);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid rgba(107,37,118,.15)}
+.stat-n{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--roxo);line-height:1}
+.stat-l{font-size:.75rem;font-weight:400;color:var(--texto-suave);margin-top:.2rem}
+.hero-right{display:flex;align-items:center;justify-content:center;padding:4rem 4rem 4rem 2rem;position:relative;z-index:1}
+.photo-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:1rem;width:100%;max-width:460px}
+.pc{border-radius:18px;overflow:hidden;background:var(--roxo-claro)}
+.pc svg{display:block;width:100%;height:100%}
+.pc.tall{grid-row:span 2}
+
+.band{background:var(--roxo);padding:1.2rem 0;overflow:hidden;display:flex}
+.band-track{display:flex;animation:slide 20s linear infinite;white-space:nowrap}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.bi{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:rgba(255,255,255,.85);padding:0 2rem}
+.bd{color:var(--pink);padding:0 .5rem;font-style:normal}
+
+.proposito{display:grid;grid-template-columns:1fr 1fr}
+.prop-l{background:var(--roxo-escuro);padding:6rem 4rem 6rem 5rem;display:flex;flex-direction:column;justify-content:center}
+.sec-tag{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--pink-claro);display:block;margin-bottom:1.25rem}
+.prop-l h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,2.3vw,2.6rem);line-height:1.2;color:white;margin-bottom:1.25rem}
+.prop-l h2 em{color:var(--pink-claro);font-style:italic}
+.prop-l p{font-size:.95rem;font-weight:300;line-height:1.85;color:rgba(255,255,255,.7);max-width:400px}
+.prop-r{background:var(--cinza);padding:6rem 5rem 6rem 4rem;display:flex;flex-direction:column;justify-content:center;gap:1.25rem}
+.pi{display:flex;gap:1.1rem;align-items:flex-start;padding:1.25rem 1.5rem;background:white;border-radius:14px;border-left:3px solid var(--roxo)}
+.pi-icon{font-size:1.35rem;flex-shrink:0;margin-top:.05rem}
+.pi h4{font-size:.9rem;font-weight:600;color:var(--texto);margin-bottom:.25rem}
+.pi p{font-size:.82rem;font-weight:300;color:var(--texto-suave);line-height:1.6}
+
+.sec-wrap{padding:6rem 5rem}
+.sec-wrap.white{background:white}
+.sec-wrap.cinza{background:var(--cinza)}
+.sec-head{text-align:center;margin-bottom:4rem}
+.sec-head-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);margin-bottom:.75rem}
+.sec-head h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,2.3vw,2.6rem);color:var(--texto);line-height:1.2}
+.sec-head h2 em{color:var(--roxo);font-style:italic}
+.sec-head p{margin-top:.75rem;font-size:.92rem;font-weight:300;color:var(--texto-suave);max-width:520px;margin-inline:auto;line-height:1.75}
+
+.fund-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:860px;margin:0 auto}
+.card-f{border-radius:22px;overflow:hidden;border:1px solid rgba(107,37,118,.1)}
+.cf-top{height:7px}
+.cf-top.r{background:linear-gradient(90deg,var(--roxo),var(--pink))}
+.cf-top.p{background:linear-gradient(90deg,var(--pink),var(--rose))}
+.cf-body{padding:2rem;background:var(--off)}
+.f-av{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.5rem;color:white;margin-bottom:1.25rem}
+.f-av.r{background:linear-gradient(135deg,var(--roxo),var(--pink))}
+.f-av.p{background:linear-gradient(135deg,var(--pink),var(--rose))}
+.card-f h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--texto);margin-bottom:.2rem}
+.card-f .role{font-size:.72rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;margin-bottom:.9rem}
+.card-f p{font-size:.85rem;font-weight:300;line-height:1.7;color:var(--texto-suave)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.1rem}
+.tg{font-size:.7rem;font-weight:600;padding:.28rem .8rem;border-radius:2rem}
+.tg.r{background:rgba(107,37,118,.1);color:var(--roxo-escuro)}
+.tg.p{background:rgba(213,57,180,.1);color:#7a1a6e}
+
+.ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto}
+.card-e{background:white;border-radius:18px;overflow:hidden;border:1px solid rgba(107,37,118,.08);transition:transform .25s,box-shadow .25s}
+.card-e:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(107,37,118,.1)}
+.es{height:5px}
+.es.r{background:linear-gradient(90deg,var(--roxo),var(--pink))}
+.es.p{background:linear-gradient(90deg,var(--pink),var(--rose))}
+.es.s{background:linear-gradient(90deg,var(--rose),var(--roxo))}
+.e-body{padding:2rem}
+.e-icon{width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.2rem}
+.e-icon.r{background:rgba(107,37,118,.08)}
+.e-icon.p{background:rgba(213,57,180,.08)}
+.e-icon.s{background:rgba(194,92,107,.08)}
+.card-e h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--texto);margin-bottom:.55rem}
+.card-e p{font-size:.85rem;font-weight:300;line-height:1.65;color:var(--texto-suave);margin-bottom:1.5rem}
+.e-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:600;text-decoration:none;transition:gap .2s}
+.e-link:hover{gap:.8rem}
+.e-link svg{width:15px;height:15px}
+
+.numeros{background:linear-gradient(135deg,var(--roxo-escuro),var(--roxo) 50%,#a02090);padding:5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+.ni .n{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:white;line-height:1;margin-bottom:.4rem}
+.ni .n sup{font-size:1.7rem}
+.ni p{font-size:.8rem;font-weight:300;color:rgba(255,255,255,.7);letter-spacing:.04em}
+
+.depo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto}
+.card-d{background:var(--cinza);border-radius:18px;padding:2rem;border:1px solid rgba(107,37,118,.08);position:relative}
+.card-d::before{content:'"';font-family:'Playfair Display',serif;font-size:5rem;line-height:1;color:var(--roxo-claro);position:absolute;top:.5rem;left:1.2rem}
+.d-text{font-size:.875rem;font-weight:300;line-height:1.75;color:var(--texto-suave);margin-top:2.5rem;margin-bottom:1.5rem}
+.d-author{display:flex;align-items:center;gap:.7rem}
+.d-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--roxo),var(--pink));display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:600;color:white;flex-shrink:0}
+.d-name{font-size:.82rem;font-weight:600;color:var(--texto)}
+.d-role{font-size:.72rem;color:var(--texto-suave);font-weight:300}
+
+.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:980px;margin:0 auto 3rem}
+.bc{background:white;border-radius:14px;padding:1.6rem;border:1px solid rgba(107,37,118,.08)}
+.b-num{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--roxo-claro);margin-bottom:.4rem}
+.bc h4{font-size:.88rem;font-weight:600;color:var(--texto);margin-bottom:.35rem}
+.bc p{font-size:.8rem;font-weight:300;line-height:1.6;color:var(--texto-suave)}
+.cta-box{display:flex;align-items:center;justify-content:center;gap:2rem;background:var(--roxo);border-radius:22px;padding:2.5rem 3rem;max-width:800px;margin:0 auto;flex-wrap:wrap;text-align:center}
+.cta-txt{font-family:'Playfair Display',serif;font-size:1.2rem;color:white;flex:1;min-width:220px;line-height:1.4}
+.cta-txt em{font-style:italic;color:var(--pink-claro)}
+
+.soc-sec{background:white;padding:5rem;text-align:center}
+.soc-sec h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.3vw,2.4rem);color:var(--texto);margin-bottom:.75rem}
+.soc-sec h2 em{color:var(--pink);font-style:italic}
+.soc-sub{font-size:.92rem;font-weight:300;color:var(--texto-suave);margin-bottom:2.5rem;max-width:460px;margin-inline:auto;line-height:1.75}
+.soc-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.sb{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.75rem;border-radius:2rem;font-size:.88rem;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.sb:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.1)}
+.sb-ig{background:linear-gradient(135deg,#d539b4,#6b2576);color:white}
+.sb-wa{background:#25D366;color:white}
+
+footer{background:var(--roxo-escuro);color:rgba(255,255,255,.5);padding:2.5rem 5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.f-logo{display:flex;align-items:center;gap:.65rem}
+.f-logo img{height:30px;filter:brightness(0) invert(1);opacity:.8}
+.f-logo span{font-family:'Playfair Display',serif;font-size:.95rem;color:rgba(255,255,255,.85)}
+footer p{font-size:.75rem;font-weight:300}
+.f-links{display:flex;gap:1.5rem}
+.f-links a{font-size:.75rem;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+.f-links a:hover{color:var(--pink-claro)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.fu{animation:fadeUp .7s ease both}
+.d1{animation-delay:.1s}.d2{animation-delay:.22s}.d3{animation-delay:.34s}.d4{animation-delay:.48s}
+
+@media(max-width:900px){
+  nav{padding:0 1.5rem}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-left{padding:3.5rem 1.5rem}
+  .hero-right{display:none}
+  .proposito{grid-template-columns:1fr}
+  .prop-l,.prop-r{padding:3.5rem 1.5rem}
+  .sec-wrap{padding:4rem 1.5rem}
+  .fund-grid,.ev-grid,.depo-grid,.ben-grid{grid-template-columns:1fr}
+  .numeros{grid-template-columns:1fr 1fr;padding:3.5rem 1.5rem}
+  footer{padding:2rem 1.5rem;flex-direction:column;text-align:center}
+  .soc-sec{padding:4rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="Logo_png.png" alt="Rede Ativa Mulher">
+  </div>
+  <ul class="nav-links">
+    <li><a href="#proposito">Propósito</a></li>
+    <li><a href="#eventos">Eventos</a></li>
+    <li><a href="#parceiros">Parceiros</a></li>
+    <li><a href="#contato" class="nav-cta">Falar conosco</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-left">
+    <div class="badge fu">✦ Movimento · Networking · Empreendedorismo</div>
+    <h1 class="hero-title fu d1">Mulheres que<br><em>se apoiam,</em><br>negócios que prosperam</h1>
+    <p class="hero-slogan fu d2">— O seu espaço de crescimento começa aqui</p>
+    <p class="hero-sub fu d2">Um ecossistema pensado para empreendedoras que querem crescer com estratégia, conexão e conhecimento real. Encontros, imersões e uma rede que transforma negócios.</p>
+    <div class="hero-btns fu d3">
+      <a href="#eventos" class="btn-p">Ver os eventos</a>
+      <a href="#parceiros" class="btn-o">Seja parceira</a>
+    </div>
+    <div class="hero-stats fu d4">
+      <div>
+        <div class="stat-n">591</div>
+        <div class="stat-l">Seguidoras no Instagram</div>
+      </div>
+      <div>
+        <div class="stat-n">4ª</div>
+        <div class="stat-l">Edição do Café de Negócios</div>
+      </div>
+      <div>
+        <div class="stat-n">1ª</div>
+        <div class="stat-l">Imersão lançada</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="photo-grid">
+      <!-- Tall card left -->
+      <div class="pc tall">
+        <svg viewBox="0 0 230 390" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6b2576"/><stop offset="100%" stop-color="#d539b4"/></linearGradient></defs>
+          <rect width="230" height="390" fill="url(#g1)"/>
+          <!-- silhuetas grupo de mulheres -->
+          <circle cx="45" cy="160" r="22" fill="rgba(255,255,255,.2)"/>
+          <circle cx="115" cy="148" r="26" fill="rgba(255,255,255,.24)"/>
+          <circle cx="185" cy="160" r="22" fill="rgba(255,255,255,.2)"/>
+          <ellipse cx="45" cy="235" rx="30" ry="48" fill="rgba(255,255,255,.14)"/>
+          <ellipse cx="115" cy="238" rx="34" ry="50" fill="rgba(255,255,255,.18)"/>
+          <ellipse cx="185" cy="235" rx="30" ry="48" fill="rgba(255,255,255,.14)"/>
+          <!-- bracinho levantado -->
+          <path d="M32 155 Q18 118 28 98" stroke="rgba(255,255,255,.22)" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <path d="M58 155 Q72 118 62 98" stroke="rgba(255,255,255,.22)" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <!-- logo da marca no topo -->
+          <text x="115" y="40" font-family="serif" font-size="11" fill="rgba(255,255,255,.7)" text-anchor="middle">Rede Ativa Mulher</text>
+          <!-- faixa bottom -->
+          <rect x="0" y="300" width="230" height="90" fill="rgba(74,26,82,.72)"/>
+          <text x="115" y="326" font-family="serif" font-style="italic" font-size="12" fill="white" text-anchor="middle">Café de Negócios</text>
+          <text x="115" y="345" font-family="sans-serif" font-size="9.5" fill="rgba(255,255,255,.7)" text-anchor="middle">4ª Edição</text>
+          <text x="115" y="361" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,.55)" text-anchor="middle">Botanic Home · Contagem</text>
+          <text x="115" y="378" font-family="sans-serif" font-size="8.5" fill="rgba(255,255,255,.45)" text-anchor="middle">MULHERES QUE SE APOIAM, NEGÓCIOS QUE PROSPERAM</text>
+        </svg>
+      </div>
+      <!-- Right column two cards -->
+      <div style="display:flex;flex-direction:column;gap:1rem">
+        <div class="pc" style="height:185px">
+          <svg viewBox="0 0 210 165" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#d539b4"/><stop offset="100%" stop-color="#a02090"/></linearGradient></defs>
+            <rect width="210" height="165" fill="url(#g2)"/>
+            <text x="105" y="28" font-family="serif" font-size="9" fill="rgba(255,255,255,.6)" text-anchor="middle">Rede Ativa Mulher</text>
+            <!-- dois blocos de data -->
+            <rect x="16" y="38" width="78" height="78" rx="10" fill="rgba(255,255,255,.94)"/>
+            <rect x="116" y="38" width="78" height="78" rx="10" fill="rgba(255,255,255,.94)"/>
+            <text x="55" y="89" font-family="sans-serif" font-weight="700" font-size="34" fill="#6b2576" text-anchor="middle">27</text>
+            <text x="155" y="89" font-family="sans-serif" font-weight="700" font-size="34" fill="#d539b4" text-anchor="middle">06</text>
+            <text x="105" y="135" font-family="serif" font-style="italic" font-size="11" fill="rgba(255,255,255,.9)" text-anchor="middle">Save the date!</text>
+            <text x="105" y="152" font-family="sans-serif" font-size="8.5" fill="rgba(255,255,255,.65)" text-anchor="middle">Imersão Rede Ativa Mulher</text>
+          </svg>
+        </div>
+        <div class="pc" style="height:185px">
+          <svg viewBox="0 0 210 165" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g3" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#4a1a52"/><stop offset="100%" stop-color="#6b2576"/></linearGradient></defs>
+            <rect width="210" height="165" fill="url(#g3)"/>
+            <!-- silhuetas Tawana e Simone -->
+            <circle cx="75" cy="60" r="24" fill="rgba(255,255,255,.2)"/>
+            <circle cx="135" cy="60" r="24" fill="rgba(255,255,255,.2)"/>
+            <ellipse cx="75" cy="115" rx="30" ry="40" fill="rgba(255,255,255,.14)"/>
+            <ellipse cx="135" cy="115" rx="30" ry="40" fill="rgba(255,255,255,.14)"/>
+            <text x="105" y="148" font-family="serif" font-style="italic" font-size="9.5" fill="rgba(255,255,255,.8)" text-anchor="middle">Mulheres reais constroem</text>
+            <text x="105" y="160" font-family="serif" font-style="italic" font-size="9.5" fill="rgba(255,255,255,.8)" text-anchor="middle">negócios reais</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
+<div class="band">
+  <div class="band-track">
+    <span class="bi">Mulheres que se apoiam</span><span class="bd">✦</span>
+    <span class="bi">Negócios que prosperam</span><span class="bd">✦</span>
+    <span class="bi">Café de Negócios</span><span class="bd">✦</span>
+    <span class="bi">Imersão Rede Ativa</span><span class="bd">✦</span>
+    <span class="bi">Mentoria Individual</span><span class="bd">✦</span>
+    <span class="bi">Networking Real</span><span class="bd">✦</span>
+    <span class="bi">Mulheres que se apoiam</span><span class="bd">✦</span>
+    <span class="bi">Negócios que prosperam</span><span class="bd">✦</span>
+    <span class="bi">Café de Negócios</span><span class="bd">✦</span>
+    <span class="bi">Imersão Rede Ativa</span><span class="bd">✦</span>
+    <span class="bi">Mentoria Individual</span><span class="bd">✦</span>
+    <span class="bi">Networking Real</span><span class="bd">✦</span>
+  </div>
+</div>
+
+<!-- PROPÓSITO -->
+<section class="proposito" id="proposito">
+  <div class="prop-l">
+    <span class="sec-tag">✦ Nosso propósito</span>
+    <h2>O espaço onde negócios <em>crescem juntos</em></h2>
+    <p>A Rede Ativa Mulher nasceu para criar um ambiente real de aprendizado e conexão para empreendedoras. Aqui, conhecimento e relacionamento andam juntos — porque negócios crescem com pessoas.</p>
+  </div>
+  <div class="prop-r">
+    <div class="pi">
+      <div class="pi-icon">📱</div>
+      <div>
+        <h4>Estratégia digital & marketing</h4>
+        <p>Gestão de mídias sociais, posicionamento online e estratégia digital com método e consistência.</p>
+      </div>
+    </div>
+    <div class="pi">
+      <div class="pi-icon">💰</div>
+      <div>
+        <h4>Gestão financeira</h4>
+        <p>Controle de finanças, organização e planejamento para a saúde financeira do seu negócio.</p>
+      </div>
+    </div>
+    <div class="pi">
+      <div class="pi-icon">🤝</div>
+      <div>
+        <h4>Network e comunidade</h4>
+        <p>Grupos por turma, grupo geral no WhatsApp e encontros presenciais que geram conexões reais.</p>
+      </div>
+    </div>
+    <div class="pi">
+      <div class="pi-icon">🎯</div>
+      <div>
+        <h4>Mentoria individual</h4>
+        <p>Encontros online semanais para aprofundar temas e entender cada mentorada individualmente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNDADORAS -->
+<section class="sec-wrap white" id="fundadoras">
+  <div class="sec-head">
+    <span class="sec-head-tag">✦ Quem somos</span>
+    <h2>As <em>fundadoras</em></h2>
+    <p>Duas especialistas, um propósito: empoderar empreendedoras com conhecimento real e conexões genuínas.</p>
+  </div>
+  <div class="fund-grid">
+    <div class="card-f">
+      <div class="cf-top r"></div>
+      <div class="cf-body">
+        <div class="f-av r">T</div>
+        <h3>Tawana</h3>
+        <div class="role" style="color:var(--roxo)">Co-fundadora · Estratégia Digital</div>
+        <p>Especialista em marketing digital, gestão de mídias sociais e posicionamento de negócios na internet. Ajuda empreendedoras a construírem uma presença digital estratégica e consistente.</p>
+        <div class="tags">
+          <span class="tg r">Marketing digital</span>
+          <span class="tg r">Mídias sociais</span>
+          <span class="tg r">Posicionamento</span>
+          <span class="tg r">Estratégia digital</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-f">
+      <div class="cf-top p"></div>
+      <div class="cf-body">
+        <div class="f-av p">S</div>
+        <h3>Simone</h3>
+        <div class="role" style="color:var(--pink)">Co-fundadora · Gestão Financeira</div>
+        <p>Especialista em gestão financeira e organização para pequenos negócios. Transforma a relação das empreendedoras com o dinheiro, o planejamento e a saúde financeira do negócio.</p>
+        <div class="tags">
+          <span class="tg p">Controle financeiro</span>
+          <span class="tg p">Planejamento</span>
+          <span class="tg p">Organização</span>
+          <span class="tg p">Gestão financeira</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTOS -->
+<section class="sec-wrap cinza" id="eventos">
+  <div class="sec-head">
+    <span class="sec-head-tag">✦ Nossos eventos</span>
+    <h2>Onde o aprendizado <em>acontece</em></h2>
+    <p>Cada formato foi criado para um momento diferente da sua jornada empreendedora.</p>
+  </div>
+  <div class="ev-grid">
+    <div class="card-e">
+      <div class="es r"></div>
+      <div class="e-body">
+        <div class="e-icon r">☕</div>
+        <h3>Café de Negócios</h3>
+        <p>Encontros periódicos onde empreendedoras aprendem, trocam experiências e ampliam a rede. Temas práticos do mundo empresarial. Já na 4ª edição no Botanic Home, Contagem — das 14h às 19h.</p>
+        <a href="https://redeativamulher.com.br/cafedenegocio" class="e-link" style="color:var(--roxo)" target="_blank">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+    <div class="card-e">
+      <div class="es p"></div>
+      <div class="e-body">
+        <div class="e-icon p">🔥</div>
+        <h3>Imersão Rede Ativa</h3>
+        <p>Nosso evento mais completo. Uma experiência intensa de aprendizado, conexão e transformação para empreendedoras que querem dar o próximo nível com profundidade e consistência.</p>
+        <a href="https://redeativamulher.com.br/imersao" class="e-link" style="color:var(--pink)" target="_blank">Ver imersão <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+    <div class="card-e">
+      <div class="es s"></div>
+      <div class="e-body">
+        <div class="e-icon s">🎯</div>
+        <h3>Mentoria Individual</h3>
+        <p>Encontros online semanais para aprofundar os temas, entender cada mentorada e gerar resultados. Grupos por turma e grupo geral no WhatsApp para trocas contínuas.</p>
+        <a href="https://www.instagram.com/redeativamulher" class="e-link" style="color:var(--rose)" target="_blank">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NÚMEROS -->
+<section class="numeros">
+  <div class="ni"><div class="n">4<sup>ª</sup></div><p>Edição do Café de Negócios</p></div>
+  <div class="ni"><div class="n">4+</div><p>Horas de conexão por evento</p></div>
+  <div class="ni"><div class="n">2</div><p>Especialistas com método próprio</p></div>
+  <div class="ni"><div class="n">591</div><p>Seguidoras no Instagram</p></div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="sec-wrap white" id="depoimentos">
+  <div class="sec-head">
+    <span class="sec-head-tag">✦ O que dizem</span>
+    <h2>Quem participou tem <em>muito a dizer</em></h2>
+  </div>
+  <div class="depo-grid">
+    <div class="card-d">
+      <p class="d-text">Foi um prazer participar do evento com vocês hoje! Um agradecimento especial à Simone Marques e à Tawana pelo evento lindo.</p>
+      <div class="d-author"><div class="d-av">L</div><div><div class="d-name">Laura Moura</div><div class="d-role">LM School</div></div></div>
+    </div>
+    <div class="card-d">
+      <p class="d-text">Mulheres incríveis, mais de 4 horas de conversa boa, muitas risadas e conexões de verdade. Uma mulher sozinha muda o jogo — imagina mulheres juntas!</p>
+      <div class="d-author"><div class="d-av">C</div><div><div class="d-name">Comunidade RAM</div><div class="d-role">Café de Negócios 3ª Edição</div></div></div>
+    </div>
+    <div class="card-d">
+      <p class="d-text">Você não tá atrasada — só tá fora das mesas onde as decisões acontecem. O Café de Negócios me colocou na mesa certa.</p>
+      <div class="d-author"><div class="d-av">P</div><div><div class="d-name">Participante</div><div class="d-role">Grupo WhatsApp RAM</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCEIROS -->
+<section class="sec-wrap cinza" id="parceiros">
+  <div class="sec-head" style="max-width:680px;margin-inline:auto;margin-bottom:3.5rem">
+    <span class="sec-head-tag">✦ Para parceiros e patrocinadores</span>
+    <h2>Sua marca dentro de uma comunidade <em>que cresce</em></h2>
+    <p>A Rede Ativa Mulher conecta sua marca a empreendedoras tomadoras de decisão, prontas para investir em seus negócios e em si mesmas.</p>
+  </div>
+  <div class="ben-grid">
+    <div class="bc"><div class="b-num">01</div><h4>Audiência qualificada</h4><p>Empreendedoras ativas, engajadas e com poder de decisão nos próprios negócios.</p></div>
+    <div class="bc"><div class="b-num">02</div><h4>Presença nos eventos</h4><p>Visibilidade nos cafés, imersões e em toda a comunicação — Instagram e WhatsApp.</p></div>
+    <div class="bc"><div class="b-num">03</div><h4>Associação positiva de marca</h4><p>Sua marca associada ao empreendedorismo feminino, estratégia e crescimento.</p></div>
+    <div class="bc"><div class="b-num">04</div><h4>Rede de relacionamento</h4><p>Acesso à comunidade ativa com troca constante de experiências e indicações.</p></div>
+    <div class="bc"><div class="b-num">05</div><h4>Projeto em expansão</h4><p>Novos eventos, novas edições e alcance crescente a cada encontro.</p></div>
+    <div class="bc"><div class="b-num">06</div><h4>Formato flexível</h4><p>Diferentes cotas para adequar ao seu objetivo e orçamento de comunicação.</p></div>
+  </div>
+  <div class="cta-box" id="contato">
+    <div class="cta-txt">Quer que sua marca faça parte da <em>Rede Ativa Mulher?</em></div>
+    <a href="https://wa.me/5531999999999?text=Olá!%20Gostaria%20de%20saber%20sobre%20parceria%20na%20Rede%20Ativa%20Mulher." class="btn-p" style="background:white;color:var(--roxo);font-size:.9rem" target="_blank">Falar com a equipe</a>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="soc-sec" id="social">
+  <span class="sec-head-tag">✦ Comunidade</span>
+  <h2>Acompanhe a <em>Rede Ativa</em></h2>
+  <p class="soc-sub">Conteúdo sobre empreendedorismo feminino, bastidores dos eventos e muito conhecimento prático todo dia.</p>
+  <div class="soc-btns">
+    <a href="https://www.instagram.com/redeativamulher" class="sb sb-ig" target="_blank">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      @redeativamulher
+    </a>
+    <a href="https://chat.whatsapp.com/LpzANEMTgMz9WYooz5t36s" class="sb sb-wa" target="_blank">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Grupo do WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">
+    <img src="Logo_png.png" alt="Rede Ativa Mulher">
+    <span>Rede Ativa Mulher</span>
+  </div>
+  <p>© 2025 Rede Ativa Mulher · Belo Horizonte, MG</p>
+  <div class="f-links">
+    <a href="https://redeativamulher.com.br/cafedenegocio">Café de Negócios</a>
+    <a href="https://redeativamulher.com.br/imersao">Imersão</a>
+    <a href="https://www.instagram.com/redeativamulher" target="_blank">Instagram</a>
+  </div>
+</footer>
+
+</body>
+</html>
