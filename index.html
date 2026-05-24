@@ -174,6 +174,21 @@ footer p{font-size:.75rem;font-weight:300}
 .fu{animation:fadeUp .7s ease both}
 .d1{animation-delay:.1s}.d2{animation-delay:.22s}.d3{animation-delay:.34s}.d4{animation-delay:.48s}
 
+
+.text-list{list-style:none;margin:1rem 0 1.3rem;display:grid;gap:.35rem}
+.text-list li{font-size:.85rem;font-weight:400;color:var(--texto-suave);line-height:1.55}
+.mentor-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:1100px;margin:0 auto}
+.mentor-card{background:white;border-radius:20px;padding:2rem;border:1px solid rgba(107,37,118,.08);box-shadow:0 18px 44px rgba(107,37,118,.06)}
+.mentor-card h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--texto);margin-bottom:.7rem}
+.mentor-card p{font-size:.86rem;font-weight:300;line-height:1.75;color:var(--texto-suave);margin-bottom:.8rem}
+.cafe-detail{max-width:1000px;margin:3rem auto 0;background:white;border-radius:22px;padding:2.5rem;border:1px solid rgba(107,37,118,.08)}
+.cafe-detail h3{font-family:'Playfair Display',serif;font-size:1.45rem;margin-bottom:.8rem;color:var(--texto)}
+.cafe-detail p{font-size:.9rem;font-weight:300;line-height:1.8;color:var(--texto-suave);margin-bottom:1rem}
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
+.video-card{background:var(--cinza);border-radius:16px;min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;color:var(--roxo);font-size:.82rem;font-weight:600}
+.card-d{display:flex;flex-direction:column;justify-content:space-between}
+.d-text{max-height:260px;overflow:auto;padding-right:.4rem}
+
 @media(max-width:900px){
   nav{padding:0 1.5rem}
   .nav-links{display:none}
@@ -186,7 +201,7 @@ footer p{font-size:.75rem;font-weight:300}
   .fund-grid{flex-direction:column}
   .card-f{flex-direction:column}
   .cf-photo{min-height:260px;width:100%}
-  .ev-grid,.depo-grid,.ben-grid{grid-template-columns:1fr}
+  .ev-grid,.depo-grid,.ben-grid,.mentor-grid,.video-grid{grid-template-columns:1fr}
   .numeros{grid-template-columns:1fr 1fr;padding:3.5rem 1.5rem}
   .imersao-banner{grid-template-columns:1fr;padding:3.5rem 1.5rem;gap:2.5rem}
   footer{padding:2rem 1.5rem;flex-direction:column;text-align:center}
@@ -201,6 +216,7 @@ footer p{font-size:.75rem;font-weight:300}
   <ul class="nav-links">
     <li><a href="#proposito">Propósito</a></li>
     <li><a href="#imersao">Imersão</a></li>
+    <li><a href="#mentorias">Mentorias</a></li>
     <li><a href="#fundadoras">Fundadoras</a></li>
     <li><a href="#parceiros">Parceiros</a></li>
     <li><a href="#contato" class="nav-cta">Falar conosco</a></li>
@@ -220,8 +236,8 @@ footer p{font-size:.75rem;font-weight:300}
       <a href="#parceiros" class="btn-o">Seja parceira</a>
     </div>
     <div class="hero-stats fu d4">
-      <div><div class="stat-n">7.7k+</div><div class="stat-l">Seguidoras na comunidade</div></div>
-      <div><div class="stat-n">4ª</div><div class="stat-l">Edição do Café de Negócios</div></div>
+      <div><div class="stat-n">7.7k+</div><div class="stat-l">Seguidoras no ecossistema</div></div>
+      <div><div class="stat-n">4</div><div class="stat-l">Edições do Café de Negócios</div></div>
       <div><div class="stat-n">27/06</div><div class="stat-l">Data da 1ª Imersão</div></div>
     </div>
   </div>
@@ -242,13 +258,13 @@ footer p{font-size:.75rem;font-weight:300}
     <span class="bi">Negócios que prosperam</span><span class="bd">✦</span>
     <span class="bi">Café de Negócios</span><span class="bd">✦</span>
     <span class="bi">Imersão 27 de Junho</span><span class="bd">✦</span>
-    <span class="bi">Mentoria Individual</span><span class="bd">✦</span>
+    <span class="bi">Mentoria Elite</span><span class="bd">✦</span>
     <span class="bi">Networking Real</span><span class="bd">✦</span>
     <span class="bi">Mulheres que se apoiam</span><span class="bd">✦</span>
     <span class="bi">Negócios que prosperam</span><span class="bd">✦</span>
     <span class="bi">Café de Negócios</span><span class="bd">✦</span>
     <span class="bi">Imersão 27 de Junho</span><span class="bd">✦</span>
-    <span class="bi">Mentoria Individual</span><span class="bd">✦</span>
+    <span class="bi">Mentoria Elite</span><span class="bd">✦</span>
     <span class="bi">Networking Real</span><span class="bd">✦</span>
   </div>
 </div>
@@ -256,14 +272,14 @@ footer p{font-size:.75rem;font-weight:300}
 <section class="proposito" id="proposito">
   <div class="prop-l">
     <span class="sec-tag">✦ Nosso propósito</span>
-    <h2>O espaço onde negócios <em>crescem juntos</em></h2>
-    <p>A Rede Ativa Mulher nasceu para criar um ambiente real de aprendizado e conexão para empreendedoras. Aqui, conhecimento e relacionamento andam juntos — porque negócios crescem com pessoas.</p>
+    <h2>O espaço onde mulheres <em>crescem juntas</em></h2>
+    <p>A Rede Ativa Mulher nasceu com o propósito de conectar, fortalecer e impulsionar mulheres empreendedoras através de conhecimento, networking e crescimento coletivo.<br><br>Mais do que um grupo, a Rede Ativa é um espaço onde mulheres encontram apoio, direção, troca e oportunidades reais de desenvolvimento pessoal e profissional.<br><br>Acreditamos que empreender se torna mais leve quando existe conexão. Quando mulheres compartilham experiências, aprendizados, desafios e caminhos.</p>
   </div>
   <div class="prop-r">
-    <div class="pi"><div class="pi-icon">📱</div><div><h4>Estratégia digital &amp; marketing</h4><p>Gestão de mídias sociais, posicionamento online e estratégia digital com método e consistência.</p></div></div>
-    <div class="pi"><div class="pi-icon">💰</div><div><h4>Gestão financeira</h4><p>Controle de finanças, organização e planejamento para a saúde financeira do seu negócio.</p></div></div>
-    <div class="pi"><div class="pi-icon">🤝</div><div><h4>Network e comunidade</h4><p>Grupos por turma, grupo geral no WhatsApp e encontros presenciais que geram conexões reais.</p></div></div>
-    <div class="pi"><div class="pi-icon">🎯</div><div><h4>Mentoria individual</h4><p>Encontros online semanais para aprofundar temas e entender cada mentorada individualmente.</p></div></div>
+    <div class="pi"><div class="pi-icon">🤝</div><div><h4>Conexão e apoio</h4><p>Um ambiente de troca para mulheres que não querem crescer sozinhas.</p></div></div>
+    <div class="pi"><div class="pi-icon">📈</div><div><h4>Estratégia para crescer</h4><p>Encontros, mentorias e experiências que unem posicionamento, finanças, mentalidade e relacionamento.</p></div></div>
+    <div class="pi"><div class="pi-icon">💜</div><div><h4>Crescimento com identidade</h4><p>Para ocupar espaços, construir negócios fortes e crescer de forma intencional, sem perder quem são no processo.</p></div></div>
+    <div class="pi"><div class="pi-icon">🌱</div><div><h4>Desenvolvimento coletivo</h4><p>Conhecimento, networking e oportunidades reais para empreendedoras em diferentes fases.</p></div></div>
   </div>
 </section>
 
@@ -275,7 +291,7 @@ footer p{font-size:.75rem;font-weight:300}
     <div class="im-details">
       <div class="im-detail"><span>📅</span> 27 de junho de 2026</div>
       <div class="im-detail"><span>🕘</span> Das 09h às 17h</div>
-      <div class="im-detail"><span>📍</span> Belo Horizonte / Contagem, MG</div>
+      <div class="im-detail"><span>📍</span> Infinity Eventos · Via Shopping Barreiro · BH</div>
     </div>
     <div class="im-pills">
       <span class="im-pill">Palestras</span>
@@ -359,8 +375,8 @@ footer p{font-size:.75rem;font-weight:300}
       <div class="e-body">
         <div class="e-icon r">☕</div>
         <h3>Café de Negócios</h3>
-        <p>Encontros periódicos onde empreendedoras aprendem, trocam experiências e ampliam a rede. Temas práticos do mundo empresarial. Já na 4ª edição no Botanic Home, Contagem — das 14h às 19h.</p>
-        <a href="https://redeativamulher.com.br/cafedenegocio" class="e-link" style="color:var(--roxo)" target="_blank">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <p>Ao longo das quatro edições, reunimos mulheres de diferentes áreas para conversas reais sobre negócios, marketing, finanças, posicionamento, vendas e desenvolvimento pessoal, sempre de forma leve, prática e acolhedora.</p>
+        <a href="#cafedenegocio" class="e-link" style="color:var(--roxo)">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
     <div class="card-e">
@@ -368,27 +384,65 @@ footer p{font-size:.75rem;font-weight:300}
       <div class="e-body">
         <div class="e-icon p">🔥</div>
         <h3>Imersão · 27/06/2026</h3>
-        <p>Um dia inteiro de palestras, talks, networking, sorteios e espaço para expositores. Das 09h às 17h. Para empreendedoras que querem identificar e ajustar o que trava o crescimento do negócio.</p>
+        <p>Um dia inteiro de palestras, talks, networking, sorteios e espaço para expositores. Das 09h às 17h, no Infinity Eventos, Via Shopping Barreiro, em BH.</p>
         <a href="https://redeativamulher.com.br/imersao" class="e-link" style="color:var(--pink)" target="_blank">Garantir vaga <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
     <div class="card-e">
       <div class="es s"></div>
       <div class="e-body">
-        <div class="e-icon s">🎯</div>
-        <h3>Mentoria Individual</h3>
-        <p>Encontros online semanais para aprofundar os temas e entender cada mentorada. Grupos por turma e grupo geral no WhatsApp para trocas contínuas de experiências e serviços.</p>
-        <a href="https://www.instagram.com/redeativamulher" class="e-link" style="color:var(--rose)" target="_blank">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <div class="e-icon s">👑</div>
+        <h3>Mentoria Elite</h3>
+        <p>Mentoria individual e online, com duração de 6 meses, para mulheres que querem crescer de forma estratégica e sustentável, com acompanhamento próximo e direcionamento personalizado.</p>
+        <a href="#mentorias" class="e-link" style="color:var(--rose)">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
+    </div>
+  </div>
+  <div class="cafe-detail" id="cafedenegocio">
+    <h3>Café de Negócios</h3>
+    <p>Mais do que um evento, o Café de Negócios se tornou um espaço de networking genuíno, onde mulheres puderam compartilhar experiências, criar conexões, fortalecer parcerias e crescer juntas.</p>
+    <p>Cada edição foi marcada por conteúdo estratégico, trocas valiosas e pela construção de uma comunidade de mulheres que entendem que empreender não precisa ser um caminho solitário.</p>
+    <div class="video-grid">
+      <div class="video-card">Espaço para vídeo da edição 1</div>
+      <div class="video-card">Espaço para vídeo da edição 2</div>
+      <div class="video-card">Espaço para vídeo da edição 3/4</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-wrap white" id="mentorias">
+  <div class="sec-head">
+    <span class="sec-head-tag">✦ Mentorias</span>
+    <h2>Estratégia, direção e <em>crescimento real</em></h2>
+    <p>Duas possibilidades para diferentes momentos da jornada empreendedora.</p>
+  </div>
+  <div class="mentor-grid">
+    <div class="mentor-card">
+      <h3>Mentoria Individual Elite</h3>
+      <p>A Mentoria Elite é uma mentoria individual e online, com duração de 6 meses, criada para mulheres que querem crescer de forma estratégica e sustentável no negócio.</p>
+      <ul class="text-list">
+        <li>▫️ Finanças</li><li>▫️ Gestão</li><li>▫️ Mentalidade</li><li>▫️ Vendas</li><li>▫️ Posicionamento digital</li>
+      </ul>
+      <p>Porque crescer um negócio não depende só de postar no Instagram. Depende de aprender a administrar, vender, se posicionar, tomar decisões e desenvolver a mentalidade certa para sustentar o crescimento.</p>
+      <p>É sobre sair do improviso e construir um negócio com mais clareza, estrutura, lucro e presença no mercado.</p>
+    </div>
+    <div class="mentor-card">
+      <h3>Mentoria Florescer</h3>
+      <p>A Mentoria Florescer é uma mentoria em grupo, online, criada para mulheres empreendedoras que querem crescer no negócio com mais clareza, direção e constância.</p>
+      <ul class="text-list">
+        <li>▫️ Posicionamento</li><li>▫️ Marketing</li><li>▫️ Vendas</li><li>▫️ Finanças</li><li>▫️ Gestão</li><li>▫️ Mentalidade</li>
+      </ul>
+      <p>Além dos encontros ao vivo, as participantes têm acesso a um grupo de suporte no WhatsApp, criando um ambiente de troca, networking, incentivo e acompanhamento durante toda a mentoria.</p>
+      <p>A Florescer é para mulheres que não querem mais empreender sozinhas, no improviso ou sem direção.</p>
     </div>
   </div>
 </section>
 
 <section class="numeros">
-  <div class="ni"><div class="n">7.7k<sup>+</sup></div><p>Seguidoras na comunidade</p></div>
-  <div class="ni"><div class="n">4<sup>ª</sup></div><p>Edição do Café de Negócios</p></div>
-  <div class="ni"><div class="n">50<sup>+</sup></div><p>Empresas impactadas</p></div>
-  <div class="ni"><div class="n">10<sup>+</sup></div><p>Anos de experiência</p></div>
+  <div class="ni"><div class="n">7.7k<sup>+</sup></div><p>Seguidores no ecossistema</p></div>
+  <div class="ni"><div class="n">4</div><p>Edições do Café de Negócios</p></div>
+  <div class="ni"><div class="n">200<sup>+</sup></div><p>Empreendedoras transformadas</p></div>
+  <div class="ni"><div class="n">10<sup>+</sup></div><p>Anos de experiência das mentoras</p></div>
 </section>
 
 <section class="sec-wrap white" id="depoimentos">
@@ -398,16 +452,16 @@ footer p{font-size:.75rem;font-weight:300}
   </div>
   <div class="depo-grid">
     <div class="card-d">
-      <p class="d-text">Foi um prazer participar do evento com vocês hoje! Um agradecimento especial à Simone Marques e à Tawana pelo evento lindo.</p>
-      <div class="d-author"><div class="d-av">L</div><div><div class="d-name">Laura Moura</div><div class="d-role">LM School</div></div></div>
+      <p class="d-text">A Mentoria Florescer, próximo nível, superou todas as expectativas. A Rede Ativa Mulher vai muito além de uma mentoria. É um ecossistema onde mulheres se fortalecem, se apoiam, prestigiam o negócio umas das outras e crescem juntas. Quando entrei, estava cansada, desmotivada e sem perspectiva. Hoje me sinto mais forte, capaz, feliz e com uma nova visão para a Acerola. Minha mentalidade mudou, meu posicionamento mudou e até o faturamento da minha empresa mudou.</p>
+      <div class="d-author"><div class="d-av">F</div><div><div class="d-name">Fabiana Fortunado</div><div class="d-role">Acerola Comidaria</div></div></div>
     </div>
     <div class="card-d">
-      <p class="d-text">Mulheres incríveis, mais de 4 horas de conversa boa, muitas risadas e conexões de verdade. Uma mulher sozinha muda o jogo — imagina mulheres juntas!</p>
-      <div class="d-author"><div class="d-av">C</div><div><div class="d-name">Comunidade RAM</div><div class="d-role">Café de Negócios 3ª Edição</div></div></div>
+      <p class="d-text">Foram 6 semanas intensas, cheias de aprendizado, desafios, tarefas e muito crescimento. A Simone e a Tawana realmente entregaram além do esperado. Em cada aula, em cada direcionamento e em cada correção, dava pra sentir o cuidado e o compromisso delas com a nossa evolução. Entrei acreditando que o crescimento seria para o meu negócio e saí me sentindo uma empresária muito mais preparada.</p>
+      <div class="d-author"><div class="d-av">M</div><div><div class="d-name">Mariana Castro</div><div class="d-role">Mel Festas</div></div></div>
     </div>
     <div class="card-d">
-      <p class="d-text">Você não tá atrasada — só tá fora das mesas onde as decisões acontecem. O Café de Negócios me colocou na mesa certa.</p>
-      <div class="d-author"><div class="d-av">P</div><div><div class="d-name">Participante</div><div class="d-role">Grupo WhatsApp RAM</div></div></div>
+      <p class="d-text">Quando participei do primeiro café da Rede Ativa Mulher, eu não imaginava o quanto aquilo ainda ia transformar a minha vida. A Rede me ajudou a enxergar que eu sou capaz. Me deu mais segurança, mais visão de negócio, mais clareza e confiança. O diferencial da Rede é entender que antes do CNPJ existe um CPF. Elas não vendem fórmulas mirabolantes. Elas ensinam, direcionam e caminham junto.</p>
+      <div class="d-author"><div class="d-av">P</div><div><div class="d-name">Pâmela Adiele</div><div class="d-role">Unika Box</div></div></div>
     </div>
   </div>
 </section>
@@ -457,6 +511,7 @@ footer p{font-size:.75rem;font-weight:300}
   <div class="f-links">
     <a href="https://redeativamulher.com.br/cafedenegocio">Café de Negócios</a>
     <a href="https://redeativamulher.com.br/imersao">Imersão</a>
+    <a href="#mentorias">Mentorias</a>
     <a href="https://www.instagram.com/redeativamulher" target="_blank">Instagram</a>
   </div>
 </footer>
